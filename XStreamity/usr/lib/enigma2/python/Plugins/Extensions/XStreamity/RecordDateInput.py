@@ -4,6 +4,7 @@
 # for localized messages
 from . import _
 
+from enigma import getBoxBrand
 from Screens.Screen import Screen
 from Components.config import config, ConfigClock, ConfigDateTime, getConfigListEntry
 from Components.ActionMap import  ActionMap
@@ -19,8 +20,11 @@ class RecordDateInput(Screen, ConfigListScreen):
 		Screen.__init__(self, session)
 		
 		skin = skin_path + 'settings.xml'
+		try:
+			from boxbranding import getImageDistro, getImageVersion, getOEVersion
+		except:
 	
-		if os.path.exists('/var/lib/dpkg/status'):
+		if getBoxBrand() == "dreambox":
 			skin = skin_path + 'DreamOS/settings.xml'
 	
 		with open(skin, 'r') as f:
