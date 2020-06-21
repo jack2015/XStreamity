@@ -171,8 +171,8 @@ def extensionsmenu(session, **kwargs):
 	
 
 def Plugins(**kwargs):
-	addFont(fontfolder + 'subset-RoundedMplus1c-Regular.ttf', 'xstreamityregular', 100, 0)
-	addFont(fontfolder + 'subset-RoundedMplus1c-Medium.ttf', 'xstreamitybold', 100, 0)
+	addFont('/usr/share/fonts/LiberationSans-Regular.ttf', 'xstreamityregular', 100, 0)
+	addFont('/usr/share/fonts/LiberationSans-Bold.ttf', 'xstreamitybold', 100, 0)
 
 	iconFile = 'icons/plugin-icon_sd.png'
 	if screenwidth.width() > 1280:
