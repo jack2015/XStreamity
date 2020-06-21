@@ -4,7 +4,6 @@
 # for localized messages
 from . import _
 from collections import OrderedDict
-from Tools.Directories import fileExists
 from Components.ActionMap import ActionMap
 from Components.Pixmap import Pixmap
 from Components.Sources.List import List
@@ -549,12 +548,11 @@ class XStreamity_Main(Screen):
 		self["splash"].show()
 		self.playlists_all = []
 		
-		if fileExists(json_file):
-			with open(json_file) as f:
-				try:
-					self.playlists_all = json.load(f)
-				except:
-					os.remove(json_file)
+		with open(json_file) as f:
+			try:
+				self.playlists_all = json.load(f)
+			except:
+				os.remove(json_file)
 
 		self.start()
 
