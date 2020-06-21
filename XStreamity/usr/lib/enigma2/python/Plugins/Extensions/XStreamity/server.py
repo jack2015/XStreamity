@@ -13,7 +13,7 @@ from plugin import skin_path, json_file, playlist_path
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from xStaticText import StaticText
-from enigma import getBoxBrand
+from boxbranding import getBoxBrand, getImageDistro, getImageVersion, getOEVersion
 
 import json
 import os
@@ -26,9 +26,6 @@ class XStreamity_AddServer(ConfigListScreen, Screen):
 		self.session = session
 		
 		skin = skin_path + 'settings.xml'
-		try:
-			from boxbranding import getImageDistro, getImageVersion, getOEVersion
-		except:
 		
 		if getBoxBrand() == "dreambox":
 			skin = skin_path + 'DreamOS/settings.xml'

@@ -14,7 +14,7 @@ from Screens.MessageBox import MessageBox
 from Screens.ParentalControlSetup import ProtectedScreen
 from Screens.Screen import Screen
 from xStaticText import StaticText
-from enigma import getBoxBrand
+from boxbranding import getImageDistro, getImageVersion, getOEVersion, getBoxBrand
 
 import xstreamity_globals as glob
 import os
@@ -30,9 +30,6 @@ class XStreamity_Settings(ConfigListScreen, Screen, ProtectedScreen):
 		self.session = session
 		
 		skin = skin_path + 'settings.xml'
-		try:
-			from boxbranding import getImageDistro, getImageVersion, getOEVersion
-		except:
 		
 		if getBoxBrand() == "dreambox":
 			skin = skin_path + 'DreamOS/settings.xml'

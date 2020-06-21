@@ -35,7 +35,7 @@ from enigma import eWidget, eLabel, eTimer, ePoint, eSize, gFont, \
 from Renderer import Renderer
 from skin import parseColor, parseFont
 
-from enigma import getBoxBrand
+from boxbranding import getBoxBrand
 
 
 # scroll type:
